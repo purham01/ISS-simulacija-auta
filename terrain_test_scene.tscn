@@ -1,10 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://bl0ji8rl7u3sk"]
+[gd_scene load_steps=20 format=3 uid="uid://bl0ji8rl7u3sk"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_7a36o"]
 [ext_resource type="Resource" path="res://terrainData/data.hterrain" id="2_axnks"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_o553n"]
+[ext_resource type="Texture2D" uid="uid://b4fsxgdwxv5gb" path="res://terrain_test_scene_slot0_albedo_bump.png" id="4_jh1yp"]
 [ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/YellowCar.tscn" id="4_tpcys"]
 [ext_resource type="Texture2D" uid="uid://dfnj8bbwnhkkk" path="res://textures/Road007/Road007_1K-PNG_Color.png" id="5_cbhyq"]
+[ext_resource type="Texture2D" uid="uid://bkm2bvub7db3a" path="res://terrain_test_scene_slot1_albedo_bump.png" id="5_mpyrh"]
+[ext_resource type="Texture2D" uid="uid://utqxj56uhph5" path="res://terrain_test_scene_slot0_normal_roughness.png" id="5_vpa6v"]
+[ext_resource type="Texture2D" uid="uid://dyg5a85x137ki" path="res://textures/Rock030/Rock030_2K-JPG_Color.jpg" id="7_oj5d6"]
+[ext_resource type="Texture2D" uid="uid://k00klqw165gy" path="res://terrain_test_scene_slot1_normal_roughness.png" id="8_o0nb4"]
+[ext_resource type="Texture2D" uid="uid://mifvlnd5n32g" path="res://textures/Ground037_2K-JPG/Ground037_2K-JPG_Color.jpg" id="8_w3pgc"]
+[ext_resource type="Texture2D" uid="uid://dno4jg58ky4pp" path="res://textures/Rock030/Rock030_2K-JPG_NormalDX.jpg" id="11_l04hb"]
+[ext_resource type="Texture2D" uid="uid://bbfiqmva8rckm" path="res://textures/Rock020/Rock020_2K-JPG_NormalDX.jpg" id="12_iqacs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7ogtp"]
 sky_top_color = Color(0.419608, 0.54902, 0.619608, 1)
@@ -23,7 +31,7 @@ glow_enabled = true
 [sub_resource type="Resource" id="Resource_rxnly"]
 script = ExtResource("3_o553n")
 mode = 0
-textures = [[], []]
+textures = [[ExtResource("4_jh1yp"), ExtResource("5_mpyrh"), ExtResource("7_oj5d6"), ExtResource("8_w3pgc")], [ExtResource("5_vpa6v"), ExtResource("8_o0nb4"), ExtResource("11_l04hb"), ExtResource("12_iqacs")]]
 
 [sub_resource type="Curve3D" id="Curve3D_jjbog"]
 bake_interval = 78.73
@@ -43,7 +51,7 @@ uv1_offset = Vector3(0.085, -0.915, 0)
 [node name="car" parent="." instance=ExtResource("4_tpcys")]
 transform = Transform3D(-0.959314, 0, -0.282341, 0, 1, 0, 0.282341, 0, -0.959314, 50.0867, 1.29162, 64.1524)
 mass = 500.0
-engine_force_value = 600
+engine_force_value = 1200
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tcouu")
@@ -70,7 +78,7 @@ cast_shadow = 1
 shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
-shader_params/u_tile_reduction = null
+shader_params/u_tile_reduction = Vector4(1, 1, 1, 0)
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.607962, 0.0826581, -0.185379)
