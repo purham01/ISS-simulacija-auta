@@ -33,13 +33,25 @@ _subresources={
 "meshes": {
 "Tree_temp_climate_012": {
 "generate/lightmap_uv": 0,
-"generate/lods": 0,
+"generate/lods": 1,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
-"save_to_file/path": "res://tmp.tres"
+"save_to_file/make_streamable": false,
+"save_to_file/path": "res://models/trees/low_poly_pack/default_tree.tres"
+}
+},
+"nodes": {
+"PATH:Tree_temp_climate_012": {
+"generate/navmesh": 1,
+"generate/occluder": 1,
+"generate/physics": true,
+"mesh_instance/visibility_range_fade_mode": 1,
+"physics/body_type": 1,
+"physics/physics_material_override": Object(PhysicsMaterial,"resource_local_to_scene":false,"resource_name":"","friction":100000.0,"rough":true,"bounce":0.0,"absorbent":false,"script":null)
+,
+"physics/shape_type": 2
 }
 }
 }
