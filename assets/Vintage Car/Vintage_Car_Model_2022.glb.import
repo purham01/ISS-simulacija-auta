@@ -1,0 +1,77 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cjknb0hmbna72"
+path="res://.godot/imported/Vintage_Car_Model_2022.glb-61bd71aa8cfdf466263e9b333450030c.scn"
+
+[deps]
+
+source_file="res://assets/Vintage Car/Vintage_Car_Model_2022.glb"
+dest_files=["res://.godot/imported/Vintage_Car_Model_2022.glb-61bd71aa8cfdf466263e9b333450030c.scn"]
+
+[params]
+
+nodes/root_type="VehicleBody3D"
+nodes/root_name="Car"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path="res://cars/caterham/car.gd"
+_subresources={
+"materials": {
+"Basic glass": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Vintage Car/Basic glass.tres"
+},
+"CarPaint": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Vintage Car/CarPaint.tres"
+},
+"HeadLights": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Vintage Car/HeadLights.tres"
+},
+"Interiors": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Vintage Car/Interiors.tres"
+},
+"Metal Mesh Grill.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Vintage Car/Metal Mesh Grill.001.tres"
+},
+"Metal scratched": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Vintage Car/Metal scratched.tres"
+},
+"Plate": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Vintage Car/Plate.tres"
+},
+"Red Light": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Vintage Car/Red Light.tres"
+},
+"Tyre": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Vintage Car/Tyre.tres"
+},
+"White": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Vintage Car/White.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

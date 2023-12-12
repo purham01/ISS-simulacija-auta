@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dswumep08twoi"]
+
+[ext_resource type="Texture2D" uid="uid://dp86oo8f4ejo8" path="res://assets/Vintage Car/Vintage_Car_Model_2022_logo_screen.jpg" id="1_51vck"]
+
+[resource]
+resource_name = "Plate"
+cull_mode = 2
+albedo_texture = ExtResource("1_51vck")
+roughness = 0.5

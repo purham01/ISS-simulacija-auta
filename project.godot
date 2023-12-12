@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="ISS simulacija auta"
-run/main_scene="res://scenes/terrain_test_scene.tscn"
+run/main_scene="res://scenes/test_camera.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
+
+[display]
+
+window/size/always_on_top=true
 
 [editor_plugins]
 

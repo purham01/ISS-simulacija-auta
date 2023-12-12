@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://r3ky1811f0l6"]
+
+[ext_resource type="PackedScene" uid="uid://cjknb0hmbna72" path="res://assets/Vintage Car/Vintage_Car_Model_2022.glb" id="1_x6rpd"]
+
+[node name="Car" instance=ExtResource("1_x6rpd")]

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cw8227g708xnv"]
+
+[ext_resource type="Texture2D" uid="uid://sp1dy2fc5m6o" path="res://assets/Vintage Car/Vintage_Car_Model_2022_seamless-metal-mesh.jpg" id="1_ekxlq"]
+
+[resource]
+resource_name = "Metal Mesh Grill.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_ekxlq")
+metallic = 1.0

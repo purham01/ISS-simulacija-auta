@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://day7u0b3ypcxw"]
+
+[resource]
+resource_name = "CarPaint"
+cull_mode = 2
+albedo_color = Color(0.267526, 0.31858, 1, 1)
+metallic = 0.5
+roughness = 0.0511811

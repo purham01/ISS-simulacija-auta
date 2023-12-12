@@ -12,6 +12,7 @@ var steer_target = 0
 @export var SENSITIVITY = 0.015
 @onready var look = $look
 @onready var head = $look/headCamera
+
 @onready var floating_camera = $look/floatingCamera
 @onready var speed_text = %speed
 
@@ -36,6 +37,13 @@ func _input(event):
 		look.rotate_y(-event.relative.x * SENSITIVITY)
 		head.rotate_x(-event.relative.y * SENSITIVITY)
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+	
+	#ako stisnemo escape možemo micat miš okolo, ak stisnemo opet na ekran se vrati
+	if event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta):
 	left_camera.global_transform = left_mirror_marker.global_transform
@@ -83,7 +91,7 @@ func _physics_process(delta):
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
 	
 	
-	steeringWheel.rotation.z = move_toward(steeringWheel.rotation.z,-steer_target*deg_to_rad(90),steering_wheel_speed*delta) 
+	steeringWheel.rotation.z = move_toward(steeringWheel.rotation.z,-steer_target*deg_to_rad(360+180),steering_wheel_speed*delta) 
 
 
 

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://kyxuv6l3bteu"]
+
+[resource]
+resource_name = "Interiors"
+cull_mode = 2
+albedo_color = Color(0.498039, 0.0745098, 0.101961, 1)
+metallic = 0.281854
+roughness = 0.81224
