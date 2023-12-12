@@ -1,0 +1,314 @@
+[gd_scene load_steps=27 format=3 uid="uid://rd8t7acjaxkn"]
+
+[ext_resource type="PackedScene" uid="uid://brtmqbtisy8xi" path="res://assets/turbosquid.com/caterham/caterham.gltf" id="1"]
+[ext_resource type="Script" path="res://cars/caterham/car.gd" id="2"]
+[ext_resource type="FontFile" path="res://assets/fonts/pt_sans_24pt.tres" id="3"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/black.material" id="3_002gu"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Car Paint.material" id="3_8e4pm"]
+[ext_resource type="PackedScene" uid="uid://buod2hlgx6fpw" path="res://assets/turbosquid.com/caterham/Dial.tscn" id="4"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/license plate.material" id="4_5s6k1"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Rear headlights reflect.material" id="4_i3a3k"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Carbon.material" id="5_4ay2j"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Rear hlights red.material" id="5_nv1pp"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Material #499.material" id="6_knyrn"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Rear hlights white.material" id="6_rjlmx"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Logo.material" id="7_axx3d"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/gas tunk.material" id="8_101qp"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Material #500.material" id="9_3vikx"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/glossy metall.material" id="14_ldbj5"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/glass.material" id="14_w35bh"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/#_001.material" id="15_jgfub"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Material #12.material" id="17_awnbc"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/#.material" id="18_enfrd"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Disk.material" id="19_ha1ed"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/tire.material" id="20_6e8b8"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Lamps.material" id="21_bvxbl"]
+[ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Turning point orange.material" id="22_nwgip"]
+[ext_resource type="PackedScene" uid="uid://8sl5gmdd6o6w" path="res://cars/camera/camera_3d.tscn" id="26_ohyc2"]
+
+[sub_resource type="BoxShape3D" id="3"]
+size = Vector3(0.884512, 0.451341, 3.36457)
+
+[node name="Car" instance=ExtResource("1")]
+mass = 575.0
+can_sleep = false
+script = ExtResource("2")
+engine_force_value = 300
+
+[node name="backlights" parent="." index="0"]
+surface_material_override/0 = ExtResource("3_002gu")
+surface_material_override/1 = ExtResource("4_i3a3k")
+surface_material_override/2 = ExtResource("5_nv1pp")
+surface_material_override/3 = ExtResource("6_rjlmx")
+
+[node name="body" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_8e4pm")
+surface_material_override/1 = ExtResource("4_5s6k1")
+surface_material_override/2 = ExtResource("5_4ay2j")
+surface_material_override/3 = ExtResource("6_knyrn")
+surface_material_override/4 = ExtResource("7_axx3d")
+surface_material_override/5 = ExtResource("8_101qp")
+surface_material_override/6 = ExtResource("9_3vikx")
+
+[node name="exhaust_tube" parent="." index="2"]
+surface_material_override/0 = ExtResource("14_ldbj5")
+surface_material_override/1 = ExtResource("15_jgfub")
+
+[node name="glass" parent="." index="3"]
+surface_material_override/0 = ExtResource("14_w35bh")
+
+[node name="interior" parent="." index="4"]
+surface_material_override/0 = ExtResource("14_ldbj5")
+surface_material_override/2 = ExtResource("5_4ay2j")
+surface_material_override/3 = ExtResource("3_8e4pm")
+surface_material_override/5 = ExtResource("3_002gu")
+
+[node name="steering" parent="interior" index="0"]
+transform = Transform3D(1, -4.0663e-08, -1.07197e-07, 1.64974e-08, 0.976296, -0.21644, 1.13458e-07, 0.21644, 0.976296, -26.6765, 4.82215, 7.54762)
+surface_material_override/0 = ExtResource("5_4ay2j")
+surface_material_override/1 = ExtResource("3_8e4pm")
+surface_material_override/2 = ExtResource("3_002gu")
+
+[node name="Lamp" parent="." index="5"]
+visible = false
+
+[node name="left_front" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.31134e-07, 0, 1.31134e-07, 1, 0.65, 0.37, 1.275)
+use_as_steering = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+wheel_friction_slip = 10.0
+suspension_travel = 0.05
+suspension_stiffness = 150.0
+suspension_max_force = 2000.0
+damping_compression = 0.8
+damping_relaxation = 0.9
+
+[node name="left_front" parent="left_front" index="0"]
+transform = Transform3D(0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0)
+surface_material_override/0 = ExtResource("17_awnbc")
+surface_material_override/1 = ExtResource("18_enfrd")
+surface_material_override/2 = ExtResource("14_ldbj5")
+surface_material_override/3 = ExtResource("19_ha1ed")
+surface_material_override/4 = ExtResource("20_6e8b8")
+
+[node name="left_rear" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.31134e-07, 0, 1.31134e-07, 1, 0.935, 0.37, -1.255)
+use_as_traction = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+wheel_friction_slip = 10.0
+suspension_travel = 0.05
+suspension_stiffness = 150.0
+suspension_max_force = 2000.0
+damping_compression = 0.7
+damping_relaxation = 0.8
+
+[node name="left_rear" parent="left_rear" index="0"]
+transform = Transform3D(0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0)
+surface_material_override/0 = ExtResource("17_awnbc")
+surface_material_override/1 = ExtResource("18_enfrd")
+surface_material_override/2 = ExtResource("14_ldbj5")
+surface_material_override/3 = ExtResource("19_ha1ed")
+surface_material_override/4 = ExtResource("20_6e8b8")
+
+[node name="right_front" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.31134e-07, 0, 1.31134e-07, 1, -0.65, 0.37, 1.275)
+use_as_steering = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+wheel_friction_slip = 10.0
+suspension_travel = 0.05
+suspension_stiffness = 150.0
+suspension_max_force = 2000.0
+damping_compression = 0.8
+damping_relaxation = 0.9
+
+[node name="right_front" parent="right_front" index="0"]
+transform = Transform3D(0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0)
+surface_material_override/0 = ExtResource("17_awnbc")
+surface_material_override/1 = ExtResource("18_enfrd")
+surface_material_override/2 = ExtResource("14_ldbj5")
+surface_material_override/3 = ExtResource("19_ha1ed")
+surface_material_override/4 = ExtResource("20_6e8b8")
+
+[node name="right_rear" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.31134e-07, 0, 1.31134e-07, 1, -0.935, 0.37, -1.255)
+use_as_traction = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+wheel_friction_slip = 10.0
+suspension_travel = 0.05
+suspension_stiffness = 150.0
+suspension_max_force = 2000.0
+damping_compression = 0.7
+damping_relaxation = 0.8
+
+[node name="right_rear" parent="right_rear" index="0"]
+transform = Transform3D(0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0)
+surface_material_override/0 = ExtResource("17_awnbc")
+surface_material_override/1 = ExtResource("18_enfrd")
+surface_material_override/2 = ExtResource("14_ldbj5")
+surface_material_override/3 = ExtResource("19_ha1ed")
+surface_material_override/4 = ExtResource("20_6e8b8")
+
+[node name="left_wing" parent="wings" index="0"]
+surface_material_override/0 = ExtResource("3_8e4pm")
+surface_material_override/1 = ExtResource("3_002gu")
+surface_material_override/2 = ExtResource("21_bvxbl")
+surface_material_override/3 = ExtResource("22_nwgip")
+
+[node name="right_wing" parent="wings" index="1"]
+surface_material_override/0 = ExtResource("3_8e4pm")
+surface_material_override/1 = ExtResource("3_002gu")
+surface_material_override/2 = ExtResource("21_bvxbl")
+surface_material_override/3 = ExtResource("22_nwgip")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631, 0)
+shape = SubResource("3")
+
+[node name="brake_lights" type="Node3D" parent="." index="12"]
+
+[node name="right_brake_light" type="OmniLight3D" parent="brake_lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 4.37114e-08, 0, -4.37114e-08, 1, -0.34591, 0.411791, -1.79736)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+omni_range = 0.1
+
+[node name="left_brake_light" type="OmniLight3D" parent="brake_lights" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 4.37114e-08, 0, -4.37114e-08, 1, 0.351679, 0.411791, -1.79736)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+omni_range = 0.1
+
+[node name="reverse_lights" type="Node3D" parent="." index="13"]
+
+[node name="left_reverse_light" type="OmniLight3D" parent="reverse_lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.748783, 0.551986, -1.66381)
+light_energy = 2.0
+omni_range = 0.1
+
+[node name="right_reverse_light" type="OmniLight3D" parent="reverse_lights" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.749, 0.552, -1.664)
+light_energy = 2.0
+omni_range = 0.1
+
+[node name="RPMDial" parent="." index="14" instance=ExtResource("4")]
+
+[node name="Speedo" parent="." index="15" instance=ExtResource("4")]
+transform = Transform3D(0.999929, -0.000697565, -0.0119349, 0, 0.998296, -0.0583481, 0.0119552, 0.0583439, 0.998225, -0.309808, 0.680574, -0.233943)
+
+[node name="Info" type="Label" parent="." index="16"]
+offset_right = 627.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("3")
+
+[node name="Hud" type="CanvasLayer" parent="." index="17"]
+layer = 2
+
+[node name="Container" type="Control" parent="Hud" index="0"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftMirror" type="SubViewportContainer" parent="Hud/Container" index="0"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 128.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="Subviewport" type="SubViewport" parent="Hud/Container/LeftMirror" index="0"]
+handle_input_locally = false
+size = Vector2i(128, 128)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="Hud/Container/LeftMirror/Subviewport" index="0"]
+transform = Transform3D(0.949725, -0.000373502, -0.313086, -0.0228441, 0.997251, -0.0704858, 0.312252, 0.0740942, 0.947106, 0.499533, 0.927667, -0.0768304)
+
+[node name="Camera3D" type="Camera3D" parent="Hud/Container/LeftMirror/Subviewport/Node3D" index="0"]
+current = true
+
+[node name="RightMirror" type="SubViewportContainer" parent="Hud/Container" index="1"]
+layout_mode = 1
+offset_right = 128.0
+offset_bottom = 128.0
+size_flags_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Subviewport" type="SubViewport" parent="Hud/Container/RightMirror" index="0"]
+handle_input_locally = false
+size = Vector2i(128, 128)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="Hud/Container/RightMirror/Subviewport" index="0"]
+transform = Transform3D(0.949725, -0.000373502, -0.313086, -0.0228441, 0.997251, -0.0704858, 0.312252, 0.0740942, 0.947106, -0.69061, 0.686293, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Hud/Container/RightMirror/Subviewport/Node3D" index="0"]
+transform = Transform3D(0.816828, 0.0364964, 0.575726, -0.0448465, 0.998994, 0.000299178, -0.575136, -0.0260637, 0.817643, 0, 0, 0)
+current = true
+
+[node name="MiddleMirror" type="SubViewportContainer" parent="Hud/Container" index="2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Subviewport" type="SubViewport" parent="Hud/Container/MiddleMirror" index="0"]
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(256, 128)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="Hud/Container/MiddleMirror/Subviewport" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026488, 1.04513, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Hud/Container/MiddleMirror/Subviewport/Node3D" index="0"]
+current = true
+
+[node name="speed" type="Label" parent="Hud/Container" index="3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -69.0
+offset_right = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+metadata/_edit_use_anchors_ = true
+
+[node name="look" type="Node3D" parent="." index="18"]
+transform = Transform3D(-0.931691, 0, 0.363251, 0, 1, 0, -0.363251, 0, -0.931691, -0.187425, 0.917953, -0.821074)
+
+[node name="floatingCamera" parent="look" index="0" instance=ExtResource("26_ohyc2")]
+transform = Transform3D(-1, 1.96658e-08, -8.51821e-08, 0, 0.97437, 0.224951, 8.74228e-08, 0.224951, -0.97437, -0.50864, 1.30949, -1.03479)
+current = false
+target_distance = 4
+target_height = 1
+
+[node name="headCamera" type="Camera3D" parent="look" index="1"]
+current = true

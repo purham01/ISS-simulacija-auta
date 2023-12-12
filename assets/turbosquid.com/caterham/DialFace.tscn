@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid="uid://ocd4di2nh44u"]
+
+[ext_resource type="Script" path="res://assets/turbosquid.com/caterham/DialFace.gd" id="1"]
+
+[node name="DialFace" type="ColorRect"]
+offset_right = 512.0
+offset_bottom = 512.0
+script = ExtResource("1")
+
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(256, 256)
+
+[node name="RPM0" type="Node2D" parent="Center"]
+rotation = 2.44346
+
+[node name="Block" type="ColorRect" parent="Center/RPM0"]
+offset_left = 200.0
+offset_top = -5.0
+offset_right = 240.0
+offset_bottom = 5.0
+color = Color(0, 0, 0, 1)
+
+[node name="RPM1000" type="Node2D" parent="Center"]
+rotation = 3.01069
+
+[node name="Block" type="ColorRect" parent="Center/RPM1000"]
+offset_left = 200.0
+offset_top = -5.0
+offset_right = 240.0
+offset_bottom = 5.0
+color = Color(0, 0, 0, 1)
+
+[node name="RPM2000" type="Node2D" parent="Center"]
+rotation = 3.57792
+
+[node name="Block" type="ColorRect" parent="Center/RPM2000"]
+offset_left = 200.0
+offset_top = -5.0
+offset_right = 240.0
+offset_bottom = 5.0
+color = Color(0, 0, 0, 1)
+
+[node name="RPM3000" type="Node2D" parent="Center"]
+rotation = 4.14516
+
+[node name="Block" type="ColorRect" parent="Center/RPM3000"]
+offset_left = 200.0
+offset_top = -5.0
+offset_right = 240.0
+offset_bottom = 5.0
+color = Color(0, 0, 0, 1)
+
+[node name="RPM4000" type="Node2D" parent="Center"]
+rotation = 4.71239
+
+[node name="Block" type="ColorRect" parent="Center/RPM4000"]
+offset_left = 200.0
+offset_top = -5.0
+offset_right = 240.0
+offset_bottom = 5.0
+color = Color(0, 0, 0, 1)
+
+[node name="RPM5000" type="Node2D" parent="Center"]
+rotation = 5.27962
+
+[node name="Block" type="ColorRect" parent="Center/RPM5000"]
+offset_left = 200.0
+offset_top = -5.0
+offset_right = 240.0
+offset_bottom = 5.0
+color = Color(0, 0, 0, 1)
+
+[node name="RPM6000" type="Node2D" parent="Center"]
+rotation = 5.84685
+
+[node name="Block" type="ColorRect" parent="Center/RPM6000"]
+offset_left = 200.0
+offset_top = -5.0
+offset_right = 240.0
+offset_bottom = 5.0
+color = Color(0, 0, 0, 1)
+
+[node name="RPM7000" type="Node2D" parent="Center"]
+rotation = 6.41408
+
+[node name="Block" type="ColorRect" parent="Center/RPM7000"]
+offset_left = 200.0
+offset_top = -5.0
+offset_right = 240.0
+offset_bottom = 5.0
+color = Color(0, 0, 0, 1)
+
+[node name="RPM8000" type="Node2D" parent="Center"]
+rotation = 6.98132
+
+[node name="Block" type="ColorRect" parent="Center/RPM8000"]
+offset_left = 200.0
+offset_top = -5.0
+offset_right = 240.0
+offset_bottom = 5.0
+color = Color(0, 0, 0, 1)
+
+[node name="Dial" type="Node2D" parent="Center"]
+
+[node name="ColorRect" type="ColorRect" parent="Center/Dial"]
+offset_left = 28.0
+offset_top = -11.0
+offset_right = 278.0
+offset_bottom = 9.0
+rotation = 140.0
+color = Color(0, 0, 0, 1)

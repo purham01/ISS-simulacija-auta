@@ -4,7 +4,7 @@
 [ext_resource type="Resource" path="res://terrainData/data.hterrain" id="2_axnks"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_o553n"]
 [ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/YellowCar.tscn" id="4_tpcys"]
-[ext_resource type="Texture2D" uid="uid://dfnj8bbwnhkkk" path="res://textures/Road007/Road007_1K-PNG_Color.png" id="5_cbhyq"]
+[ext_resource type="Texture2D" uid="uid://b66aiytt3ku87" path="res://textures/Road007/Road007_1K-PNG_Color.png" id="5_cbhyq"]
 [ext_resource type="Texture2D" uid="uid://rk11w3g8ef1a" path="res://scenes/terrain_test_scene_slot0_albedo_bump.png" id="5_iv0r4"]
 [ext_resource type="Texture2D" uid="uid://c6uvw66nsj6gj" path="res://scenes/terrain_test_scene_slot1_albedo_bump.png" id="6_myt4y"]
 [ext_resource type="Texture2D" uid="uid://d2uhqdxn0bmoo" path="res://scenes/terrain_test_scene_slot2_albedo_bump.png" id="7_0b2g2"]
