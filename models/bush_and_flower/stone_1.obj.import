@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bw2hn3kbv6vr6"
+path="res://.godot/imported/stone_1.obj-586962cfe12fd17ffaab496028c83847.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stone_1.obj-586962cfe12fd17ffaab496028c83847.mesh"]
+
+source_file="res://models/bush_and_flower/stone_1.obj"
+dest_files=["res://.godot/imported/stone_1.obj-586962cfe12fd17ffaab496028c83847.mesh", "res://.godot/imported/stone_1.obj-586962cfe12fd17ffaab496028c83847.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
