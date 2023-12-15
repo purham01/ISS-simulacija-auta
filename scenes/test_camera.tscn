@@ -106,3 +106,4 @@ size = Vector3(0.3, 0.14044, 10.8715)
 
 [node name="Car" parent="." instance=ExtResource("2_c7fn4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20925, 0, 7.32604)
+rotating_camera_limit_bottom = 0

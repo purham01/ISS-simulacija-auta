@@ -1112,6 +1112,15 @@ current = false
 target_distance = 4
 target_height = 1
 
+[node name="TwistPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.266057, 0.932397, -0.664)
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 0, 0)
+
+[node name="rotatingCamera" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -4)
+
 [node name="LeftMirrorMarker" type="Node3D" parent="."]
 transform = Transform3D(0.949725, -0.00037355, -0.313086, -0.0228441, 0.997251, -0.0704857, 0.312252, 0.0740942, 0.947105, 0.59798, 0.81738, -0.162519)
 

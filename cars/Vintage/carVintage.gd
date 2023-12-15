@@ -14,7 +14,13 @@ var steer_target = 0
 @export var SENSITIVITY = 0.015
 @onready var look = $look
 @onready var head = $look/headCamera
+@onready var twist_pivot = $TwistPivot
+@onready var pitch_pivot = $TwistPivot/PitchPivot
 
+
+@onready var rotating_camera = $TwistPivot/PitchPivot/rotatingCamera
+@export var rotating_camera_limit_bottom := -40
+@export var rotating_camera_limit_top := 60
 @onready var floating_camera = $look/floatingCamera
 @onready var speed_text = %speed
 
@@ -32,14 +38,27 @@ func _ready():
 func _input(event):
 	
 	if event.is_action_pressed("change_view"):
-		if floating_camera.current == true:
+		if rotating_camera.current == true:
 			head.current = true
 		elif head.current == true:
 			floating_camera.current = true
-	if event is InputEventMouseMotion:
-		look.rotate_y(-event.relative.x * SENSITIVITY)
-		head.rotate_x(-event.relative.y * SENSITIVITY)
-		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		elif floating_camera.current == true:
+			rotating_camera.current = true
+	
+	if head.current == true:
+		if event is InputEventMouseMotion:
+			if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+				look.rotate_y(-event.relative.x * SENSITIVITY)
+				head.rotate_x(-event.relative.y * SENSITIVITY)
+				head.rotation.x = clamp(head.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+
+	if rotating_camera.current == true:
+		if event is InputEventMouseMotion:
+			if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+				twist_pivot.rotate_y(-event.relative.x * SENSITIVITY*0.5)
+				pitch_pivot.rotate_x(event.relative.y * SENSITIVITY*0.5)
+				pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x, deg_to_rad(rotating_camera_limit_bottom), deg_to_rad(rotating_camera_limit_top))
+	
 	
 	#ako stisnemo escape možemo micat miš okolo, ak stisnemo opet na ekran se vrati
 	if event.is_action_pressed("ui_cancel"):
@@ -52,6 +71,7 @@ func _process(delta):
 	left_camera.global_transform = left_mirror_marker.global_transform
 	right_camera.global_transform = right_mirror_marker.global_transform
 	middle_camera.global_transform= middle_mirror_marker.global_transform
+	
 	
 
 
