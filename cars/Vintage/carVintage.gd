@@ -3,8 +3,6 @@ extends VehicleBody3D
 
 @onready var steering_wheel = $Interior/SteeringWheelBase/Node3D/steering_wheel
 
-
-
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.8
 var steer_target = 0
@@ -21,9 +19,15 @@ var steer_target = 0
 @onready var rotating_camera = $TwistPivot/PitchPivot/rotatingCamera
 @export var rotating_camera_limit_bottom := -40
 @export var rotating_camera_limit_top := 60
-@onready var floating_camera = $look/floatingCamera
+
+#@onready var floating_camera = $look/floatingCamera
+@onready var floating_camera = $look2/floating_camera
+@onready var floating_camera_reverse = $look2/floating_camera_reverse
+@onready var floating_camera_pivot = $look2
+
 @onready var speed_text = %speed
 @onready var gear_text = %gear
+@onready var dial = $Interior/Dial
 
 @onready var left_camera = $Hud/Container/LeftMirror/Subviewport/Node3D
 @onready var right_camera = $Hud/Container/RightMirror/Subviewport/Node3D
@@ -33,9 +37,11 @@ var steer_target = 0
 @onready var left_mirror_marker = $LeftMirrorMarker
 
 var gear = 1
+var look_at
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	look_at = global_position
 	
 
 func _input(event):
@@ -54,14 +60,12 @@ func _input(event):
 				look.rotate_y(-event.relative.x * SENSITIVITY)
 				head.rotate_x(-event.relative.y * SENSITIVITY)
 				head.rotation.x = clamp(head.rotation.x, deg_to_rad(-40), deg_to_rad(60))
-
 	if rotating_camera.current == true:
 		if event is InputEventMouseMotion:
 			if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 				twist_pivot.rotate_y(-event.relative.x * SENSITIVITY*0.5)
 				pitch_pivot.rotate_x(event.relative.y * SENSITIVITY*0.5)
 				pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x, deg_to_rad(rotating_camera_limit_bottom), deg_to_rad(rotating_camera_limit_top))
-	
 	
 	#ako stisnemo escape možemo micat miš okolo, ak stisnemo opet na ekran se vrati
 	if event.is_action_pressed("ui_cancel"):
@@ -74,13 +78,25 @@ func _process(delta):
 	left_camera.global_transform = left_mirror_marker.global_transform
 	right_camera.global_transform = right_mirror_marker.global_transform
 	middle_camera.global_transform= middle_mirror_marker.global_transform
-	
-	
 
+
+func _check_camera_switch():
+	if linear_velocity.dot(transform.basis.z)>0:
+		floating_camera.current = true
+	else:
+		floating_camera_reverse.current = true
 
 func _physics_process(delta):
-	var speed = linear_velocity.length()*Engine.get_frames_per_second()*delta
-	var kmph = speed*3.8
+	floating_camera_pivot.global_position = floating_camera_pivot.global_position.lerp(global_position,delta*20.0)
+	floating_camera_pivot.transform = floating_camera_pivot.transform.interpolate_with(transform, delta*5.0)
+	look_at= look_at.lerp(global_position+linear_velocity,delta)
+	floating_camera.look_at(look_at)
+	floating_camera_reverse.look_at(look_at)
+	if floating_camera.current == true or floating_camera_reverse.current == true:
+		_check_camera_switch()
+	
+	var speed = linear_velocity.length()
+	var kmph = speed * 3.6
 	traction(speed)
 	speed_text.text=str(round(kmph))+"  KMPH"
 	gear_text.text= str(gear)
@@ -92,27 +108,30 @@ func _physics_process(delta):
 	# Increase engine force at low speeds to make the initial acceleration faster.
 
 		if (gear == 1):
-			if (kmph >= 25):
-				engine_force = 0
+			if (kmph >= 20):
+				engine_force = engine_force_value *0.1
 			else:
 				engine_force = engine_force_value
 		elif (gear == 2):
-			if (kmph >= 40):
-				engine_force = 0
+			if kmph >= 30:
+				engine_force = engine_force_value *0.1
 			else:
-				engine_force = engine_force_value * 0.8
+				engine_force = engine_force_value
 		elif (gear == 3):
-			if (kmph >= 70):
-				engine_force = 0
+			if (kmph <= 25 or kmph >= 50):
+				engine_force = engine_force_value *0.1
 			else:
-				engine_force = engine_force_value * 0.6
+				engine_force = engine_force_value
 		elif (gear == 4):
-			if (kmph >= 105):
-				engine_force = 0
+			if (kmph <=45 or kmph>=70):
+				engine_force = engine_force_value *0.1
 			else:
-				engine_force = engine_force_value * 0.5
+				engine_force = engine_force_value #* 0.5
 		elif (gear == 5):
-			engine_force = engine_force_value * 0.4	
+			if (kmph<=60 or kmph >=90 ):
+				engine_force = engine_force_value *0.1
+			else:
+				engine_force = engine_force_value #* 0.4
 	
 	elif Input.is_action_pressed("ui_down"):
 		engine_force = -engine_force_value*0.5
@@ -130,10 +149,11 @@ func _physics_process(delta):
 			gear -= 1
 	
 	if Input.is_action_pressed("ui_select"):
-		
+		brake = 10
 		$right_rear.wheel_friction_slip=0.8
 		$left_rear.wheel_friction_slip=0.8
 	else:
+		brake=0
 		$right_rear.wheel_friction_slip=1.4
 		$left_rear.wheel_friction_slip=1.4
 	
