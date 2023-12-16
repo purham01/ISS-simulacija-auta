@@ -38,7 +38,6 @@ shadow_enabled = true
 directional_shadow_max_distance = 200.0
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-transform = Transform3D(0.659575, 0, 0, 0, 0.659575, 0, 0, 0, 0.659575, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_2da72")
 use_collision = true
 
@@ -106,4 +105,5 @@ size = Vector3(0.3, 0.14044, 10.8715)
 
 [node name="Car" parent="." instance=ExtResource("2_c7fn4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20925, 0, 7.32604)
+gravity_scale = 2.0
 rotating_camera_limit_bottom = 0

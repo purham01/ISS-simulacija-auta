@@ -940,7 +940,7 @@ skeleton = NodePath("")
 [node name="left_front" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1.0018, 0, 0, 0, 1.0018, -1.31369e-07, 0, 1.31369e-07, 1.0018, 0.565349, 0.321495, 1.08844)
 use_as_steering = true
-wheel_roll_influence = 0.01
+wheel_roll_influence = 2.0
 wheel_radius = 0.32
 wheel_friction_slip = 1.4
 suspension_travel = 0.15
@@ -957,7 +957,7 @@ skeleton = NodePath("")
 [node name="right_front" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, -1.31134e-07, 0, 1.31134e-07, 1, -0.5655, 0.321582, 1.08877)
 use_as_steering = true
-wheel_roll_influence = 0.01
+wheel_roll_influence = 2.0
 wheel_radius = 0.32
 wheel_friction_slip = 1.4
 suspension_travel = 0.15
@@ -974,7 +974,7 @@ skeleton = NodePath("")
 [node name="left_rear" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, -1.31134e-07, 0, 1.31134e-07, 1, 0.5655, 0.321582, -1.14922)
 use_as_traction = true
-wheel_roll_influence = 0.01
+wheel_roll_influence = 2.0
 wheel_radius = 0.32
 wheel_friction_slip = 1.1
 suspension_travel = 0.15
@@ -991,7 +991,7 @@ skeleton = NodePath("")
 [node name="right_rear" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, -1.31134e-07, 0, 1.31134e-07, 1, -0.5655, 0.321582, -1.14922)
 use_as_traction = true
-wheel_roll_influence = 0.01
+wheel_roll_influence = 2.0
 wheel_radius = 0.32
 wheel_friction_slip = 1.1
 suspension_travel = 0.15
@@ -1099,6 +1099,17 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 metadata/_edit_use_anchors_ = true
+
+[node name="gear" type="Label" parent="Hud/Container"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
 
 [node name="look" type="Node3D" parent="."]
 transform = Transform3D(-0.931691, 0, 0.363251, 0, 1, 0, -0.363251, 0, -0.931691, 0.266057, 0.932397, -0.664)
