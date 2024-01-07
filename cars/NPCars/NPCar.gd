@@ -38,7 +38,7 @@ func _physics_process(delta):
 			print(global_position.distance_to(target.global_position))
 			
 			follow_target(destination)
-			if global_position.distance_to(target.global_position)<5:
+			if global_position.distance_to(target.global_position)<10:
 				path_follow.progress_ratio+=0.001
 
 			
