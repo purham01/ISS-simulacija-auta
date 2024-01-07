@@ -6,9 +6,10 @@ extends VehicleBody3D
 @export var STEER_LIMIT = 0.8
 
 @onready var nav = $NavigationAgent3D
-@onready var ray_cast_3d = $RayCast3D
 @export var target : Node3D
 @export var path_follow : PathFollow3D
+@onready var brakes_raycast = $BrakesRaycast
+@onready var speed_raycast = $SpeedRaycast
 
 var can_move = false
 
@@ -37,7 +38,7 @@ func _physics_process(delta):
 			#print(global_position.distance_to(target.global_position))
 			
 			follow_target(destination)
-			if global_position.distance_to(target.global_position)<10:
+			if global_position.distance_to(target.global_position)<20:
 				path_follow.progress_ratio+=0.001
 
 			
@@ -45,20 +46,21 @@ func _physics_process(delta):
 				#engine_force = 0
 				#brake = 6
 			
-			if ray_cast_3d.is_colliding():
-				var collider =  ray_cast_3d.get_collider()
+			if brakes_raycast.is_colliding():
+				var collider =  brakes_raycast.get_collider()
 				if collider.is_in_group("Car"):
 					print("Hey there's a car!")
-					
 					if collider.linear_velocity.length() < linear_velocity.length():
-						brake = 100
-						engine_force = 0
-					else:
-						engine_force = ray_cast_3d.get_collider().engine_force
-					
+						brake = 6
 				else:
 					engine_force = 0
 					brake = 6
+			elif speed_raycast.is_colliding():
+				print("Adjusting speed")
+				var collider =  speed_raycast.get_collider()
+				if collider.is_in_group("Car"):
+					if collider.engine_force < engine_force:
+						engine_force = collider.engine_force
 			else:
 				engine_force = engine_force_value
 				brake=0

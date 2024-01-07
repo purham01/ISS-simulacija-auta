@@ -112,7 +112,7 @@ progress = 14.3491
 transform = Transform3D(1, 2.79397e-09, 2.98023e-08, -9.31323e-10, 1.00001, 0, 0, 0, 1, 12.5952, -2.38419e-07, 7.62939e-06)
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="NavigationRegion3D/Path3D"]
-transform = Transform3D(-0.963925, -0.0344723, -0.263839, -0.024147, 0.998775, -0.0422804, 0.264983, -0.0343845, -0.963617, 72.3331, 2.13792, 111.157)
+transform = Transform3D(-0.963924, -0.0344723, -0.263839, -0.024147, 0.998775, -0.0422804, 0.264983, -0.0343845, -0.963617, 72.3331, 2.13792, 111.157)
 progress = 57.9482
 
 [node name="Marker3D" type="Marker3D" parent="NavigationRegion3D/Path3D/PathFollow3D2"]
