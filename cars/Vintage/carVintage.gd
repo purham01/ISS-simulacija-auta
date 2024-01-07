@@ -27,11 +27,11 @@ var steer_target = 0
 
 @onready var speed_text = %speed
 @onready var gear_text = %gear
-@onready var dial = $Interior/Dial
+#@onready var dial = $Interior/Dial
 
-@onready var left_camera = $Hud/Container/LeftMirror/Subviewport/Node3D
-@onready var right_camera = $Hud/Container/RightMirror/Subviewport/Node3D
-@onready var middle_camera = $Hud/Container/MiddleMirror/Subviewport/Node3D
+@onready var left_camera = $Hud/Container/Mirrors/LeftMirror/Subviewport/Node3D
+@onready var right_camera = $Hud/Container/Mirrors/RightMirror/Subviewport/Node3D
+@onready var middle_camera = $Hud/Container/Mirrors/MiddleMirror/Subviewport/Node3D
 @onready var middle_mirror_marker = $MiddleMirrorMarker
 @onready var right_mirror_marker = $RightMirrorMarker
 @onready var left_mirror_marker = $LeftMirrorMarker
