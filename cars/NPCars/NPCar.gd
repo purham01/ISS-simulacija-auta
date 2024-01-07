@@ -35,10 +35,10 @@ func _physics_process(delta):
 			var car_vector2 = Vector2(global_position.x,global_position.z)
 			var destionation_vector2 = Vector2(destination.x,destination.z)
 			
-			print(destionation_vector2.distance_to(car_vector2))
+			print(global_position.distance_to(target.global_position))
 			
 			follow_target(destination)
-			if global_position.distance_to(destination)<5:
+			if global_position.distance_to(target.global_position)<5:
 				path_follow.progress_ratio+=0.001
 
 			
