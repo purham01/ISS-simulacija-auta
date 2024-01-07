@@ -105,13 +105,13 @@ path_joined = false
 material = SubResource("StandardMaterial3D_invgd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="NavigationRegion3D/Path3D"]
-transform = Transform3D(-0.964424, -0.0159878, -0.263844, -0.00499546, 0.99908, -0.0422812, 0.26428, -0.039459, -0.963634, 57.192, -0.32, 55.241)
+transform = Transform3D(-0.964409, -0.0159874, -0.263839, -0.00499539, 0.999055, -0.0422804, 0.264275, -0.039458, -0.963617, 57.192, -0.32, 55.241)
 
 [node name="Marker3D" type="Marker3D" parent="NavigationRegion3D/Path3D/PathFollow3D"]
 transform = Transform3D(1, 2.79397e-09, 2.98023e-08, -9.31323e-10, 1.00001, 0, 0, 0, 1, 12.5952, -2.38419e-07, 7.62939e-06)
 
 [node name="NormalCar1" parent="." node_paths=PackedStringArray("target", "path_follow") instance=ExtResource("14_oyvh0")]
-transform = Transform3D(0.972132, -0.00929288, 0.234228, 4.45871e-08, 0.999206, 0.0396435, -0.234412, -0.0385386, 0.971371, 45.4474, 0.697797, 63.7088)
+transform = Transform3D(0.971956, -0.0094366, 0.234952, 0, 0.999187, 0.0401317, -0.235141, -0.0390062, 0.971176, 45.4474, 0.697797, 63.7088)
 can_sleep = false
 target = NodePath("../NavigationRegion3D/Path3D/PathFollow3D/Marker3D")
 path_follow = NodePath("../NavigationRegion3D/Path3D/PathFollow3D")

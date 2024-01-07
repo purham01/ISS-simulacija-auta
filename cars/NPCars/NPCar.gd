@@ -31,32 +31,20 @@ func _physics_process(delta):
 			nav.target_position = target.global_position
 		
 			var destination = nav.get_next_path_position() 
-			#print(destination)
-			direction = destination - global_position
-			direction = direction.normalized()
-			
+
 			var car_vector2 = Vector2(global_position.x,global_position.z)
 			var destionation_vector2 = Vector2(destination.x,destination.z)
 			
-			var steer_to = rad_to_deg(destionation_vector2.angle_to(car_vector2))
-			var steer_direction = 0
-			print(steer_to)
-			#print(destination.distance_to(global_position))
+			print(destionation_vector2.distance_to(car_vector2))
 			
-			if abs(steer_to) > 0 and abs(steer_to) < 5:
-				steer_direction = 0
-			elif steer_to > 5:
-				steer_direction = STEER_LIMIT
-			elif steer_to < -5:
-				steer_direction = -STEER_LIMIT
-			
-			steering = move_toward(steering, steer_direction, STEER_SPEED * delta)
-			
-			if destionation_vector2.distance_to(car_vector2)<5 or destionation_vector2.distance_to(car_vector2) < 10:
+			follow_target(destination)
+			if global_position.distance_to(destination)<5:
 				path_follow.progress_ratio+=0.001
-				engine_force = 0
-				brake = 6
-				#engine_force = engine_force_value
+
+			
+			#if destionation_vector2.distance_to(car_vector2)<5 or destionation_vector2.distance_to(car_vector2) > 10:
+				#engine_force = 0
+				#brake = 6
 			
 			if ray_cast_3d.is_colliding():
 				engine_force = 0
@@ -67,7 +55,14 @@ func _physics_process(delta):
 			
 			var speed = linear_velocity.length()
 			traction(speed)
-			
+
+func follow_target(steering_target):
+	var fwd = self.linear_velocity.normalized()
+	var target_vector = (steering_target - global_position)
+	#var distance = target_vector.length()
+	steering = fwd.cross(target_vector.normalized()).y
+	#print("steering: " + str(steering))
+
 func traction(speed):
 	apply_central_force(Vector3.DOWN*speed)
 
