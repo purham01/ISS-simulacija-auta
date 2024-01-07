@@ -2,7 +2,6 @@ extends VehicleBody3D
 
 
 @export var engine_force_value = 200
-@export var steering_wheel_speed = 10
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.8
 
@@ -35,7 +34,7 @@ func _physics_process(delta):
 			var car_vector2 = Vector2(global_position.x,global_position.z)
 			var destionation_vector2 = Vector2(destination.x,destination.z)
 			
-			print(global_position.distance_to(target.global_position))
+			#print(global_position.distance_to(target.global_position))
 			
 			follow_target(destination)
 			if global_position.distance_to(target.global_position)<10:
@@ -47,8 +46,19 @@ func _physics_process(delta):
 				#brake = 6
 			
 			if ray_cast_3d.is_colliding():
-				engine_force = 0
-				brake = 6
+				var collider =  ray_cast_3d.get_collider()
+				if collider.is_in_group("Car"):
+					print("Hey there's a car!")
+					
+					if collider.linear_velocity.length() < linear_velocity.length():
+						brake = 100
+						engine_force = 0
+					else:
+						engine_force = ray_cast_3d.get_collider().engine_force
+					
+				else:
+					engine_force = 0
+					brake = 6
 			else:
 				engine_force = engine_force_value
 				brake=0

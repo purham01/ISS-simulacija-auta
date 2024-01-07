@@ -397,9 +397,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wqjtj")
 
-[node name="NormalCar1" type="VehicleBody3D"]
+[node name="NormalCar1" type="VehicleBody3D" groups=["Car"]]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_lohwc")
 
 [node name="NormalCar1" type="MeshInstance3D" parent="."]
@@ -413,7 +413,8 @@ shape = SubResource("BoxShape3D_vvhkv")
 [node name="FrontRight" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.688899, 0.267922, 1.19587)
 use_as_steering = true
-wheel_radius = 0.25
+wheel_radius = 0.255
+suspension_travel = 0.3
 
 [node name="NormalCar1_FrontRightWheel" type="MeshInstance3D" parent="FrontRight"]
 mesh = SubResource("ArrayMesh_03t3l")
@@ -422,7 +423,8 @@ skeleton = NodePath("")
 [node name="FrontLeft" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.690639, 0.267922, 1.19587)
 use_as_steering = true
-wheel_radius = 0.25
+wheel_radius = 0.255
+suspension_travel = 0.3
 
 [node name="NormalCar1_FrontLeftWheel" type="MeshInstance3D" parent="FrontLeft"]
 mesh = SubResource("ArrayMesh_dmf8f")
@@ -431,7 +433,8 @@ skeleton = NodePath("")
 [node name="BackRight" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.591716, 0.267922, -1.24326)
 use_as_traction = true
-wheel_radius = 0.25
+wheel_radius = 0.255
+suspension_travel = 0.3
 
 [node name="NormalCar1_BackWheels" type="MeshInstance3D" parent="BackRight"]
 mesh = SubResource("ArrayMesh_lua4f")
@@ -441,6 +444,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.593456, 0.267922, -1.24326)
 use_as_traction = true
 wheel_radius = 0.25
+suspension_travel = 0.3
 
 [node name="NormalCar1_BackWheels_001" type="MeshInstance3D" parent="BackLeft"]
 mesh = SubResource("ArrayMesh_jdr8l")
