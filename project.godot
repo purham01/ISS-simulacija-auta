@@ -11,17 +11,13 @@ config_version=5
 [application]
 
 config/name="ISS simulacija auta"
-run/main_scene="res://scenes/test_camera.tscn"
+run/main_scene="res://scenes/terrain_test_scene_NPCars.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
-
-[display]
-
-window/size/always_on_top=true
 
 [editor_plugins]
 
@@ -82,6 +78,12 @@ gear_down={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="player"
+3d_physics/layer_3="npc"
 
 [rendering]
 

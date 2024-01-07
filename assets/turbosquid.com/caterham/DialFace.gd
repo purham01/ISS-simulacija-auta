@@ -1,4 +1,5 @@
 extends ColorRect
+@onready var dial = $Center/Dial
 
 func set_dial(angle):
-	$Center/Dial.rotation = angle
+	dial.rotation_degrees = angle

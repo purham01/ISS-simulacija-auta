@@ -1121,7 +1121,6 @@ transform = Transform3D(-0.931691, 0, 0.363251, 0, 1, 0, -0.363251, 0, -0.931691
 current = true
 
 [node name="look2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 top_level = true
 
 [node name="floating_camera" type="Camera3D" parent="look2"]

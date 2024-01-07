@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ocd4di2nh44u"]
+[gd_scene load_steps=3 format=3 uid="uid://cmv5n61a234h6"]
 
-[ext_resource type="Script" path="res://assets/turbosquid.com/caterham/DialFace.gd" id="1"]
+[ext_resource type="Script" path="res://assets/turbosquid.com/caterham/DialFace.gd" id="1_dkjpw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_abhud"]
 font_size = 33
@@ -9,7 +9,7 @@ font_color = Color(0, 0, 0, 1)
 [node name="DialFace" type="ColorRect"]
 offset_right = 512.0
 offset_bottom = 512.0
-script = ExtResource("1")
+script = ExtResource("1_dkjpw")
 
 [node name="Center" type="Node2D" parent="."]
 position = Vector2(256, 256)

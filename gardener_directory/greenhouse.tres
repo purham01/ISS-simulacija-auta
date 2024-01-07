@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse.gd" id="1_f4u6w"]
 [ext_resource type="ArrayMesh" uid="uid://dil70inj78efy" path="res://models/trees/low_poly_pack/default_tree.tres" id="1_wctft"]
 [ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse_plant_state.gd" id="2_y2xbn"]
-[ext_resource type="PackedScene" uid="uid://b63sel17mw3kd" path="res://scenes/tree_scene.tscn" id="3_puxko"]
+[ext_resource type="PackedScene" uid="uid://ciyyjbn8xta5y" path="res://scenes/tree_scene.tscn" id="3_puxko"]
 [ext_resource type="ArrayMesh" uid="uid://cg4tetld71o7n" path="res://models/trees/low_poly_pack/leafless_tree.tres" id="5_qfdgt"]
 [ext_resource type="ArrayMesh" uid="uid://bfeeesp3jinje" path="res://models/trees/low_poly_pack/pine_tree.tres" id="6_g0bjs"]
 
