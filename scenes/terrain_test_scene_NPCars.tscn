@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cvyv552x0ako" path="res://scenes/terrain_test_scene_slot3_normal_roughness.png" id="13_q2mcm"]
 [ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/YellowCar.tscn" id="14_6t05d"]
 [ext_resource type="PackedScene" uid="uid://w7k6v8463arh" path="res://cars/NPCars/normal_car_1.tscn" id="14_oyvh0"]
-[ext_resource type="Texture2D" uid="uid://b66aiytt3ku87" path="res://textures/Road007/Road007_1K-PNG_Color.png" id="14_wxeuw"]
+[ext_resource type="Texture2D" uid="uid://dfnj8bbwnhkkk" path="res://textures/Road007/Road007_1K-PNG_Color.png" id="14_wxeuw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7ogtp"]
 sky_top_color = Color(0.419608, 0.54902, 0.619608, 1)
@@ -91,7 +91,7 @@ curve = SubResource("Curve3D_jjbog")
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="NavigationRegion3D/Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00271821, 2.98023e-08, 3.29018e-05)
 use_collision = true
-polygon = PackedVector2Array(0, 0, -0.0120881, 0.358794, 16.0948, 0.3584, 16.0877, -0.029484)
+polygon = PackedVector2Array(0, 0, -0.0120881, 0.358794, 6.73251, 0.353304, 6.75221, 0.00147717)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -119,17 +119,17 @@ progress = 57.9482
 transform = Transform3D(1, 2.79397e-09, 2.98023e-08, -9.31323e-10, 1.00001, 0, 0, 0, 1, 12.5952, -2.38419e-07, 7.62939e-06)
 
 [node name="NormalCar1" parent="." node_paths=PackedStringArray("target", "path_follow") instance=ExtResource("14_oyvh0")]
-transform = Transform3D(0.971956, -0.0094366, 0.234952, 0, 0.999187, 0.0401317, -0.235141, -0.0390062, 0.971176, 45.4474, 0.697797, 63.7088)
+transform = Transform3D(0.971956, -0.0094366, 0.234952, 0, 0.999187, 0.0401317, -0.235141, -0.0390062, 0.971176, 53.0214, 1.13739, 63.7088)
 can_sleep = false
 engine_force_value = 220
 target = NodePath("../NavigationRegion3D/Path3D/PathFollow3D/Marker3D")
 path_follow = NodePath("../NavigationRegion3D/Path3D/PathFollow3D")
 
 [node name="NormalCar2" parent="." node_paths=PackedStringArray("target", "path_follow") instance=ExtResource("14_oyvh0")]
-transform = Transform3D(0.971956, -0.0094366, 0.234952, 0, 0.999187, 0.0401317, -0.235141, -0.0390062, 0.971176, 59.0683, 2.97518, 110.397)
+transform = Transform3D(0.971956, -0.0094366, 0.234952, 0, 0.999187, 0.0401317, -0.235141, -0.0390062, 0.971176, 65.8198, 2.97518, 110.397)
 can_sleep = false
 target = NodePath("../NavigationRegion3D/Path3D/PathFollow3D2/Marker3D")
 path_follow = NodePath("../NavigationRegion3D/Path3D/PathFollow3D2")
 
 [node name="car" parent="." instance=ExtResource("14_6t05d")]
-transform = Transform3D(0.964833, 0, 0.262862, 0, 1, 0, -0.262862, 0, 0.964833, 104.826, 7.50402, 209.852)
+transform = Transform3D(0.964833, 0, 0.262862, 0, 1, 0, -0.262862, 0, 0.964833, 109.055, 7.50402, 209.852)
