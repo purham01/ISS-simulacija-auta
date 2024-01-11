@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dclor180ca4kr"]
+[gd_scene load_steps=45 format=3 uid="uid://dclor180ca4kr"]
 
 [ext_resource type="Script" path="res://cars/Vintage/carVintage.gd" id="1_bn311"]
 [ext_resource type="Material" uid="uid://day7u0b3ypcxw" path="res://assets/Vintage Car/CarPaint.tres" id="2_hdlra"]
@@ -14,7 +14,6 @@
 [ext_resource type="Material" uid="uid://tudbgoiinlcr" path="res://assets/Vintage Car/Tyre.tres" id="11_r08jh"]
 [ext_resource type="Material" uid="uid://c5h4gej4c0do3" path="res://assets/Vintage Car/Red.tres" id="11_vlvgt"]
 [ext_resource type="Material" path="res://assets/turbosquid.com/caterham/black.material" id="11_wdw1k"]
-[ext_resource type="PackedScene" uid="uid://cbbo5h8fin38q" path="res://cars/Vintage/mirrors.tscn" id="15_jfy6p"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_asd7r"]
 _surfaces = [{
@@ -862,6 +861,7 @@ shadow_mesh = SubResource("ArrayMesh_hdw41")
 size = Vector3(1.22641, 0.451341, 3.65103)
 
 [node name="Car" type="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.98702e-05, 0.00512969, 0.00066638)
 mass = 150.0
 gravity_scale = 5.0
 center_of_mass_mode = 1
@@ -1020,7 +1020,77 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Mirrors" parent="Hud/Container" instance=ExtResource("15_jfy6p")]
+[node name="Mirrors" type="Control" parent="Hud/Container"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftMirror" type="SubViewportContainer" parent="Hud/Container/Mirrors"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 984.0
+offset_right = 1112.0
+offset_bottom = 128.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="Subviewport" type="SubViewport" parent="Hud/Container/Mirrors/LeftMirror"]
+handle_input_locally = false
+size = Vector2i(128, 128)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="Hud/Container/Mirrors/LeftMirror/Subviewport"]
+transform = Transform3D(0.927184, 0, -0.374607, 0, 1, 0, 0.374607, 0, 0.927184, 0.613365, 0.874153, -0.181891)
+
+[node name="LeftCamera" type="Camera3D" parent="Hud/Container/Mirrors/LeftMirror/Subviewport/Node3D"]
+current = true
+
+[node name="RightMirror" type="SubViewportContainer" parent="Hud/Container/Mirrors"]
+layout_mode = 1
+offset_right = 128.0
+offset_bottom = 128.0
+size_flags_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Subviewport" type="SubViewport" parent="Hud/Container/Mirrors/RightMirror"]
+handle_input_locally = false
+size = Vector2i(128, 128)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="Hud/Container/Mirrors/RightMirror/Subviewport"]
+transform = Transform3D(0.849893, -0.133719, 0.509708, 0, 0.967267, 0.253758, -0.526956, -0.215667, 0.822074, -0.629249, 0.848327, -0.0817418)
+
+[node name="RightCamera" type="Camera3D" parent="Hud/Container/Mirrors/RightMirror/Subviewport/Node3D"]
+current = true
+
+[node name="MiddleMirror" type="SubViewportContainer" parent="Hud/Container/Mirrors"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 428.0
+offset_right = 684.0
+offset_bottom = 128.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Subviewport" type="SubViewport" parent="Hud/Container/Mirrors/MiddleMirror"]
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(256, 128)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="Hud/Container/Mirrors/MiddleMirror/Subviewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00238297, 1.04513, -0.64332)
+
+[node name="MiddleCamera" type="Camera3D" parent="Hud/Container/Mirrors/MiddleMirror/Subviewport/Node3D"]
+current = true
 
 [node name="speed" type="Label" parent="Hud/Container"]
 unique_name_in_owner = true
