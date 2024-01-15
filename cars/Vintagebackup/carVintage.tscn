@@ -1,6 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://dclor180ca4kr"]
 
-[ext_resource type="Script" path="res://cars/Vintage/carVintage.gd" id="1_bn311"]
+[ext_resource type="Script" path="res://cars/Vintagebackup/carVintage.gd" id="1_f5lsw"]
 [ext_resource type="Material" uid="uid://day7u0b3ypcxw" path="res://assets/Vintage Car/CarPaint.tres" id="2_hdlra"]
 [ext_resource type="Material" uid="uid://bemrgkxw34gds" path="res://assets/Vintage Car/Basic glass.tres" id="3_35847"]
 [ext_resource type="Material" uid="uid://cd66h4q360dvy" path="res://assets/Vintage Car/White.tres" id="4_tv8n4"]
@@ -867,8 +867,7 @@ gravity_scale = 5.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.5, 0.3)
 can_sleep = false
-script = ExtResource("1_bn311")
-engine_force_value = 200
+script = ExtResource("1_f5lsw")
 
 [node name="Chasis" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0.393603, 0, -0.393603, 0, 0, 0, 0, 0.393603, 0, 0.320229, 1.09134)

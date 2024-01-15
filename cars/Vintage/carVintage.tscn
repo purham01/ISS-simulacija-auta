@@ -868,7 +868,6 @@ center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.5, 0.3)
 can_sleep = false
 script = ExtResource("1_bn311")
-engine_force_value = 200
 
 [node name="Chasis" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0.393603, 0, -0.393603, 0, 0, 0, 0, 0.393603, 0, 0.320229, 1.09134)

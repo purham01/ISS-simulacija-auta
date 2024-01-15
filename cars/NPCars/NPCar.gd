@@ -4,12 +4,18 @@ extends VehicleBody3D
 @export var engine_force_value = 200
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.8
+@export var going_backwards_on_path = false
+@export var distance_to_update_path = 20.0
+
+
 
 @onready var nav = $NavigationAgent3D
 @export var target : Node3D
 @export var path_follow : PathFollow3D
 @onready var brakes_raycast = $BrakesRaycast
 @onready var speed_raycast = $SpeedRaycast
+
+
 
 var can_move = false
 
@@ -38,8 +44,8 @@ func _physics_process(delta):
 			#print(global_position.distance_to(target.global_position))
 			
 			follow_target(destination)
-			if global_position.distance_to(target.global_position)<20:
-				path_follow.progress_ratio+=0.001
+			if global_position.distance_to(target.global_position)<distance_to_update_path:
+				path_follow.progress_ratio+=0.001 * (-1 if going_backwards_on_path else 1)
 
 			
 			#if destionation_vector2.distance_to(car_vector2)<5 or destionation_vector2.distance_to(car_vector2) > 10:
