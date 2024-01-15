@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b727ej7veifi8"]
 
 [ext_resource type="Texture2D" uid="uid://cpwiyoo7664vj" path="res://cars/Models/texture_10.png" id="1_jsaog"]
-[ext_resource type="PackedScene" uid="uid://dclor180ca4kr" path="res://cars/Vintagebackup/carVintage.tscn" id="2_c7fn4"]
+[ext_resource type="PackedScene" uid="uid://dclor180ca4kr" path="res://cars/Vintage/carVintage.tscn" id="2_c7fn4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7tlo"]
 sky_top_color = Color(0.419608, 0.54902, 0.619608, 1)
@@ -105,6 +105,4 @@ transform = Transform3D(-0.00242604, 0, -0.999997, 0, 2.55802, 0, 0.999997, 0, -
 size = Vector3(0.3, 0.14044, 10.8715)
 
 [node name="Car" parent="." instance=ExtResource("2_c7fn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20925, 0.306718, 7.32604)
-gravity_scale = 2.0
-rotating_camera_limit_bottom = 0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19682, 5.51985e-05, 5.69654)

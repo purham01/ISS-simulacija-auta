@@ -27,7 +27,7 @@ var steer_target = 0
 
 @onready var speed_text = %speed
 @onready var gear_text = %gear
-@onready var dial = $Interior/Dial
+#@onready var dial = $Interior/Dial
 
 @onready var left_camera = $Hud/Container/LeftMirror/Subviewport/Node3D
 @onready var right_camera = $Hud/Container/RightMirror/Subviewport/Node3D

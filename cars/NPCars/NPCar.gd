@@ -6,7 +6,7 @@ extends VehicleBody3D
 @export var STEER_LIMIT = 0.8
 @export var going_backwards_on_path = false
 @export var distance_to_update_path = 20.0
-
+@export var start_moving = false
 
 
 @onready var nav = $NavigationAgent3D
@@ -29,7 +29,7 @@ func actor_setup():
 
 
 func _physics_process(delta):
-	if can_move:
+	if can_move and start_moving:
 		var direction = Vector3()
 		
 		if target != null:
