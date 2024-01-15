@@ -209,6 +209,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hh1fg")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pmq56"]
+size = Vector3(1.57191, 0.788391, 3.26746)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_yf3dk"]
 _surfaces = [{
 "aabb": AABB(-5.96046e-08, -0.247519, -0.247519, 0.180388, 0.495038, 0.495038),
@@ -425,17 +428,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7topc")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_pmq56"]
-size = Vector3(1.57191, 0.788391, 3.26746)
-
 [node name="NormalCar2" instance=ExtResource("1_0p1ts")]
 
 [node name="NormalCar2" type="MeshInstance3D" parent="." index="0"]
 mesh = SubResource("ArrayMesh_xrauf")
 skeleton = NodePath("")
 
-[node name="SpeedRaycast" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.615921, 1.5162)
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.741103, 0)
+shape = SubResource("BoxShape3D_pmq56")
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568547, 0.219177, -0.95541)
@@ -473,6 +474,5 @@ wheel_radius = 0.25
 mesh = SubResource("ArrayMesh_xwwsq")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" parent="." index="8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.741103, 0)
-shape = SubResource("BoxShape3D_pmq56")
+[node name="SpeedRaycast" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.615921, 1.5162)

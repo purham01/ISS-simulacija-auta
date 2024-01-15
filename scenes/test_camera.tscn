@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b727ej7veifi8"]
 
 [ext_resource type="Texture2D" uid="uid://cpwiyoo7664vj" path="res://cars/Models/texture_10.png" id="1_jsaog"]
-[ext_resource type="PackedScene" uid="uid://dclor180ca4kr" path="res://cars/Vintage/carVintage.tscn" id="2_c7fn4"]
+[ext_resource type="PackedScene" uid="uid://dclor180ca4kr" path="res://cars/Vintagebackup/carVintage.tscn" id="2_c7fn4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7tlo"]
 sky_top_color = Color(0.419608, 0.54902, 0.619608, 1)

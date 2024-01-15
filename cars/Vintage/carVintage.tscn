@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dclor180ca4kr"]
+[gd_scene load_steps=46 format=3 uid="uid://dclor180ca4kr"]
 
 [ext_resource type="Script" path="res://cars/Vintage/carVintage.gd" id="1_bn311"]
 [ext_resource type="Material" uid="uid://day7u0b3ypcxw" path="res://assets/Vintage Car/CarPaint.tres" id="2_hdlra"]
@@ -9,6 +9,7 @@
 [ext_resource type="Material" uid="uid://b4eagpoajnwt1" path="res://assets/Vintage Car/Metal scratched.tres" id="7_cw1de"]
 [ext_resource type="Material" path="res://assets/turbosquid.com/caterham/Carbon.material" id="9_o6wh4"]
 [ext_resource type="Material" uid="uid://kyxuv6l3bteu" path="res://assets/Vintage Car/Interiors.tres" id="9_snpd0"]
+[ext_resource type="PackedScene" uid="uid://buod2hlgx6fpw" path="res://assets/turbosquid.com/caterham/Dial.tscn" id="10_44vsg"]
 [ext_resource type="Material" uid="uid://dswumep08twoi" path="res://assets/Vintage Car/Plate.tres" id="10_kxerh"]
 [ext_resource type="Material" uid="uid://bwm8ct57p14d" path="res://assets/turbosquid.com/caterham/Car Paint.material" id="10_x5gdr"]
 [ext_resource type="Material" uid="uid://tudbgoiinlcr" path="res://assets/Vintage Car/Tyre.tres" id="11_r08jh"]
@@ -861,7 +862,6 @@ shadow_mesh = SubResource("ArrayMesh_hdw41")
 size = Vector3(1.22641, 0.451341, 3.65103)
 
 [node name="Car" type="VehicleBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.98702e-05, 0.00512969, 0.00066638)
 mass = 150.0
 gravity_scale = 5.0
 center_of_mass_mode = 1
@@ -906,6 +906,10 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_o6wh4")
 surface_material_override/1 = ExtResource("10_x5gdr")
 surface_material_override/2 = ExtResource("11_wdw1k")
+
+[node name="Dial" parent="Interior" instance=ExtResource("10_44vsg")]
+transform = Transform3D(1.98815, 2.84217e-14, 1.66825, -4.26326e-14, 2.59534, -2.84217e-14, -1.66825, 0, 1.98815, -0.924634, 1.04411, -3.5496)
+visible = false
 
 [node name="Lights_Rear" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0.271751, 0, -0.205427, 0, 0, 0, 0, 0.306314, 0, -0.0329027, 0)
@@ -1020,76 +1024,67 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Mirrors" type="Control" parent="Hud/Container"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LeftMirror" type="SubViewportContainer" parent="Hud/Container/Mirrors"]
+[node name="LeftMirror" type="SubViewportContainer" parent="Hud/Container"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 984.0
-offset_right = 1112.0
+offset_left = -128.0
 offset_bottom = 128.0
 grow_horizontal = 0
 size_flags_horizontal = 8
-metadata/_edit_use_anchors_ = true
 
-[node name="Subviewport" type="SubViewport" parent="Hud/Container/Mirrors/LeftMirror"]
+[node name="Subviewport" type="SubViewport" parent="Hud/Container/LeftMirror"]
 handle_input_locally = false
 size = Vector2i(128, 128)
 render_target_update_mode = 4
 
-[node name="Node3D" type="Node3D" parent="Hud/Container/Mirrors/LeftMirror/Subviewport"]
+[node name="Node3D" type="Node3D" parent="Hud/Container/LeftMirror/Subviewport"]
 transform = Transform3D(0.927184, 0, -0.374607, 0, 1, 0, 0.374607, 0, 0.927184, 0.613365, 0.874153, -0.181891)
 
-[node name="LeftCamera" type="Camera3D" parent="Hud/Container/Mirrors/LeftMirror/Subviewport/Node3D"]
+[node name="LeftCamera" type="Camera3D" parent="Hud/Container/LeftMirror/Subviewport/Node3D"]
 current = true
 
-[node name="RightMirror" type="SubViewportContainer" parent="Hud/Container/Mirrors"]
+[node name="RightMirror" type="SubViewportContainer" parent="Hud/Container"]
 layout_mode = 1
 offset_right = 128.0
 offset_bottom = 128.0
 size_flags_horizontal = 0
-metadata/_edit_use_anchors_ = true
 
-[node name="Subviewport" type="SubViewport" parent="Hud/Container/Mirrors/RightMirror"]
+[node name="Subviewport" type="SubViewport" parent="Hud/Container/RightMirror"]
 handle_input_locally = false
 size = Vector2i(128, 128)
 render_target_update_mode = 4
 
-[node name="Node3D" type="Node3D" parent="Hud/Container/Mirrors/RightMirror/Subviewport"]
+[node name="Node3D" type="Node3D" parent="Hud/Container/RightMirror/Subviewport"]
 transform = Transform3D(0.849893, -0.133719, 0.509708, 0, 0.967267, 0.253758, -0.526956, -0.215667, 0.822074, -0.629249, 0.848327, -0.0817418)
 
-[node name="RightCamera" type="Camera3D" parent="Hud/Container/Mirrors/RightMirror/Subviewport/Node3D"]
+[node name="RightCamera" type="Camera3D" parent="Hud/Container/RightMirror/Subviewport/Node3D"]
 current = true
 
-[node name="MiddleMirror" type="SubViewportContainer" parent="Hud/Container/Mirrors"]
+[node name="MiddleMirror" type="SubViewportContainer" parent="Hud/Container"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 428.0
-offset_right = 684.0
+offset_left = -128.0
+offset_right = 128.0
 offset_bottom = 128.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Subviewport" type="SubViewport" parent="Hud/Container/Mirrors/MiddleMirror"]
+[node name="Subviewport" type="SubViewport" parent="Hud/Container/MiddleMirror"]
 handle_input_locally = false
 gui_disable_input = true
 size = Vector2i(256, 128)
 render_target_update_mode = 4
 
-[node name="Node3D" type="Node3D" parent="Hud/Container/Mirrors/MiddleMirror/Subviewport"]
+[node name="Node3D" type="Node3D" parent="Hud/Container/MiddleMirror/Subviewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00238297, 1.04513, -0.64332)
 
-[node name="MiddleCamera" type="Camera3D" parent="Hud/Container/Mirrors/MiddleMirror/Subviewport/Node3D"]
+[node name="MiddleCamera" type="Camera3D" parent="Hud/Container/MiddleMirror/Subviewport/Node3D"]
 current = true
 
 [node name="speed" type="Label" parent="Hud/Container"]
@@ -1130,6 +1125,7 @@ top_level = true
 
 [node name="floating_camera" type="Camera3D" parent="look2"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.64616, -3.27193)
+current = true
 
 [node name="floating_camera_reverse" type="Camera3D" parent="look2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64616, 3.18494)
