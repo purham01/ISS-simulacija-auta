@@ -2,8 +2,7 @@ extends VehicleBody3D
 
 
 @export var engine_force_value = 200
-@export var STEER_SPEED = 1.5
-@export var STEER_LIMIT = 0.8
+@export var STEER_SPEED = 1
 @export var going_backwards_on_path = false
 @export var distance_to_update_path = 20.0
 @export var start_moving = false
@@ -48,7 +47,7 @@ func _physics_process(delta):
 			
 			#print(global_position.distance_to(target.global_position))
 			
-			follow_target(destination)
+			follow_target(destination, delta)
 			if global_position.distance_to(target.global_position)<distance_to_update_path:
 				path_follow.progress_ratio+=0.001 * (-1 if going_backwards_on_path else 1)
 
@@ -81,11 +80,12 @@ func _physics_process(delta):
 
 			traction(speed)
 
-func follow_target(steering_target):
+func follow_target(steering_target,delta):
 	var fwd = self.linear_velocity.normalized()
 	var target_vector = (steering_target - global_position)
 	#var distance = target_vector.length()
-	steering = fwd.cross(target_vector.normalized()).y
+	#steering = move_toward(steering, steer_target, STEER_SPEED * delta)
+	steering = move_toward(steering, fwd.cross(target_vector.normalized()).y, STEER_SPEED * delta)
 	#print("steering: " + str(steering))
 
 func traction(speed):
