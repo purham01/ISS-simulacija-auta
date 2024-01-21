@@ -407,6 +407,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.593029, 0.251005, -1.14275)
 use_as_traction = true
 wheel_radius = 0.25
+suspension_stiffness = 30.0
 
 [node name="Taxi_BackWheels" type="MeshInstance3D" parent="VehicleWheel3D" index="0"]
 mesh = SubResource("ArrayMesh_2lawn")
@@ -416,6 +417,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.689325, 0.251005, 1.29638)
 use_as_steering = true
 wheel_radius = 0.25
+suspension_stiffness = 30.0
 
 [node name="Taxi_FrontLeftWheel" type="MeshInstance3D" parent="VehicleWheel3D2" index="0"]
 mesh = SubResource("ArrayMesh_c6irm")
@@ -425,6 +427,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.690212, 0.251005, 1.29638)
 use_as_steering = true
 wheel_radius = 0.25
+suspension_stiffness = 30.0
 
 [node name="Taxi_FrontRightWheel" type="MeshInstance3D" parent="VehicleWheel3D3" index="0"]
 mesh = SubResource("ArrayMesh_wkbg3")
@@ -434,11 +437,12 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.592143, 0.251005, -1.14275)
 use_as_traction = true
 wheel_radius = 0.25
+suspension_stiffness = 30.0
 
 [node name="Taxi_BackWheels_001" type="MeshInstance3D" parent="VehicleWheel3D4" index="0"]
 mesh = SubResource("ArrayMesh_c6ivd")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" parent="." index="8"]
+[node name="CollisionShape3D" parent="." index="5"]
 transform = Transform3D(0.999989, -9.01241e-05, -0.00464367, 0.000180621, 0.99981, 0.019489, 0.00464103, -0.0194896, 0.999799, -0.0181427, 0.787439, 0.14982)
 shape = SubResource("BoxShape3D_xx71q")

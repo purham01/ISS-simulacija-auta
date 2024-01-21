@@ -7,6 +7,7 @@ extends VehicleBody3D
 @export var going_backwards_on_path = false
 @export var distance_to_update_path = 20.0
 @export var start_moving = false
+@export var max_speed = 60.0
 
 
 @onready var nav = $NavigationAgent3D
@@ -31,6 +32,10 @@ func actor_setup():
 func _physics_process(delta):
 	if can_move and start_moving:
 		var direction = Vector3()
+		
+		var speed = linear_velocity.length()
+		var kmph = speed * 3.6
+		print("NPCar speed: "+ str(kmph))
 		
 		if target != null:
 			#print("Target found")
@@ -68,10 +73,12 @@ func _physics_process(delta):
 					if collider.engine_force < engine_force:
 						engine_force = collider.engine_force
 			else:
-				engine_force = engine_force_value
-				brake=0
-			
-			var speed = linear_velocity.length()
+				if(kmph > max_speed):
+					engine_force = engine_force_value * 0.1
+				else:
+					engine_force = engine_force_value
+					brake=0
+
 			traction(speed)
 
 func follow_target(steering_target):

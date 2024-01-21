@@ -5,7 +5,11 @@
 [node name="CarTemplate" type="VehicleBody3D" groups=["Car"]]
 collision_layer = 4
 collision_mask = 7
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.5, 0.5)
 script = ExtResource("1_agiq8")
+engine_force_value = 80
+start_moving = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 
@@ -21,3 +25,6 @@ collision_mask = 6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.615921, 1.98817)
 target_position = Vector3(0, 0, 20)
 collision_mask = 6
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.468881, 0.490935)
