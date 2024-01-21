@@ -442,6 +442,7 @@ shape = SubResource("BoxShape3D_pmq56")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568547, 0.219177, -0.95541)
 use_as_traction = true
 wheel_radius = 0.25
+suspension_stiffness = 30.0
 
 [node name="NormalCar2_BackWheels" type="MeshInstance3D" parent="VehicleWheel3D" index="0"]
 mesh = SubResource("ArrayMesh_jtp5t")
@@ -451,6 +452,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65874, 0.219177, 1.04035)
 use_as_steering = true
 wheel_radius = 0.25
+suspension_stiffness = 30.0
 
 [node name="NormalCar2_FrontLeftWheel" type="MeshInstance3D" parent="VehicleWheel3D2" index="0"]
 mesh = SubResource("ArrayMesh_40dpl")
@@ -460,6 +462,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.567498, 0.219177, 1.04035)
 use_as_steering = true
 wheel_radius = 0.25
+suspension_stiffness = 30.0
 
 [node name="NormalCar2_FrontRightWheel" type="MeshInstance3D" parent="VehicleWheel3D3" index="0"]
 mesh = SubResource("ArrayMesh_oxead")
@@ -469,6 +472,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.567498, 0.219177, -0.95541)
 use_as_traction = true
 wheel_radius = 0.25
+suspension_stiffness = 30.0
 
 [node name="NormalCar2_BackWheels_001" type="MeshInstance3D" parent="VehicleWheel3D4" index="0"]
 mesh = SubResource("ArrayMesh_xwwsq")

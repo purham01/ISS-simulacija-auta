@@ -465,6 +465,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.600729, 0.259024, -1.15459)
 use_as_traction = true
 wheel_radius = 0.275
+suspension_stiffness = 30.0
 
 [node name="Cop_BackWheels" type="MeshInstance3D" parent="VehicleWheel3D" index="0"]
 mesh = SubResource("ArrayMesh_wvhe0")
@@ -474,6 +475,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.712048, 0.259024, 1.14105)
 use_as_steering = true
 wheel_radius = 0.275
+suspension_stiffness = 30.0
 
 [node name="Cop_FrontLeftWheel" type="MeshInstance3D" parent="VehicleWheel3D2" index="0"]
 mesh = SubResource("ArrayMesh_1syqp")
@@ -483,6 +485,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.711618, 0.259024, 1.14105)
 use_as_steering = true
 wheel_radius = 0.275
+suspension_stiffness = 30.0
 
 [node name="Cop_FrontRightWheel" type="MeshInstance3D" parent="VehicleWheel3D3" index="0"]
 mesh = SubResource("ArrayMesh_jqho1")
@@ -491,18 +494,19 @@ skeleton = NodePath("")
 [node name="VehicleWheel3D4" type="VehicleWheel3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.601159, 0.259024, -1.15459)
 wheel_radius = 0.275
+suspension_stiffness = 30.0
 
 [node name="Cop_BackWheels_001" type="MeshInstance3D" parent="VehicleWheel3D4" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 0, 0)
 mesh = SubResource("ArrayMesh_tjdd5")
 skeleton = NodePath("")
 
-[node name="BrakesRaycast" parent="." index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.615921, 1.62608)
-
-[node name="SpeedRaycast" parent="." index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.615921, 1.62608)
-
-[node name="CollisionShape3D" parent="." index="8"]
+[node name="CollisionShape3D" parent="." index="5"]
 transform = Transform3D(0.999989, -9.01241e-05, -0.00464367, 0.000180621, 0.99981, 0.019489, 0.00464103, -0.0194896, 0.999799, -0.0482699, 0.678027, -0.00589669)
 shape = SubResource("BoxShape3D_ym7kt")
+
+[node name="BrakesRaycast" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.615921, 1.62608)
+
+[node name="SpeedRaycast" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.615921, 1.62608)
