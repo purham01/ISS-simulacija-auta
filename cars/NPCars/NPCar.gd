@@ -34,7 +34,7 @@ func _physics_process(delta):
 		
 		var speed = linear_velocity.length()
 		var kmph = speed * 3.6
-		print("NPCar speed: "+ str(kmph))
+		#print("NPCar speed: "+ str(kmph))
 		
 		if target != null:
 			#print("Target found")
@@ -60,17 +60,17 @@ func _physics_process(delta):
 				var collider =  brakes_raycast.get_collider()
 				if collider.is_in_group("Car"):
 					print("Hey there's a car!")
-					if collider.linear_velocity.length() < linear_velocity.length():
-						brake = 6
+					brake = 200
 				else:
 					engine_force = 0
-					brake = 6
+					brake = 200
 			elif speed_raycast.is_colliding():
 				print("Adjusting speed")
 				var collider =  speed_raycast.get_collider()
 				if collider.is_in_group("Car"):
 					if collider.engine_force < engine_force:
 						engine_force = collider.engine_force
+						brake = 10
 			else:
 				if(kmph > max_speed):
 					engine_force = engine_force_value * 0.1

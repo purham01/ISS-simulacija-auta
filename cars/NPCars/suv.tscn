@@ -409,11 +409,15 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00506592, 1.05884, -0.0400238)
 shape = SubResource("BoxShape3D_ypgcd")
 
+[node name="BrakesRaycast" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 1.08174, 1.98817)
+
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.670039, 0.309136, -1.2511)
 use_as_traction = true
 wheel_radius = 0.325
 suspension_stiffness = 30.0
+suspension_max_force = 10000.0
 
 [node name="SUV_BackWheels" type="MeshInstance3D" parent="VehicleWheel3D" index="0"]
 mesh = SubResource("ArrayMesh_37g1d")
@@ -424,6 +428,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77266, 0.309136, 1.31695)
 use_as_steering = true
 wheel_radius = 0.325
 suspension_stiffness = 30.0
+suspension_max_force = 10000.0
 
 [node name="SUV_FrontLeftWheel" type="MeshInstance3D" parent="VehicleWheel3D2" index="0"]
 mesh = SubResource("ArrayMesh_a2bid")
@@ -434,6 +439,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.762373, 0.309136, 1.31695)
 use_as_steering = true
 wheel_radius = 0.325
 suspension_stiffness = 30.0
+suspension_max_force = 10000.0
 
 [node name="SUV_FrontRightWheel" type="MeshInstance3D" parent="VehicleWheel3D3" index="0"]
 mesh = SubResource("ArrayMesh_spasn")
@@ -444,8 +450,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.680326, 0.309136, -1.2511)
 use_as_traction = true
 wheel_radius = 0.325
 suspension_stiffness = 30.0
+suspension_max_force = 10000.0
 
 [node name="SUV_BackWheels_001" type="MeshInstance3D" parent="VehicleWheel3D4" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.19209e-07)
 mesh = SubResource("ArrayMesh_lhu21")
 skeleton = NodePath("")
+
+[node name="SpeedRaycast" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 1.08174, 1.98817)

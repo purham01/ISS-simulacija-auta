@@ -401,6 +401,12 @@ shadow_mesh = SubResource("ArrayMesh_wcq4f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799533, 0.0266376)
 shape = ExtResource("2_6vamw")
 
+[node name="BrakesRaycast" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.876679, 1.98817)
+
+[node name="SpeedRaycast" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.876679, 1.98817)
+
 [node name="FrontRight" type="VehicleWheel3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.688899, 0.267922, 1.19587)
 use_as_steering = true

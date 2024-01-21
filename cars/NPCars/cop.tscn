@@ -506,7 +506,7 @@ transform = Transform3D(0.999989, -9.01241e-05, -0.00464367, 0.000180621, 0.9998
 shape = SubResource("BoxShape3D_ym7kt")
 
 [node name="BrakesRaycast" parent="." index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.615921, 1.62608)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.737993, 1.62608)
 
 [node name="SpeedRaycast" parent="." index="8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.615921, 1.62608)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.737993, 1.62608)

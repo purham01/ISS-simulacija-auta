@@ -438,6 +438,9 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.805947, 0)
 shape = SubResource("BoxShape3D_pmq56")
 
+[node name="BrakesRaycast" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.900755, 1.98817)
+
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568547, 0.219177, -0.95541)
 use_as_traction = true
@@ -479,4 +482,4 @@ mesh = SubResource("ArrayMesh_xwwsq")
 skeleton = NodePath("")
 
 [node name="SpeedRaycast" parent="." index="8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.615921, 1.5162)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431687, 0.900292, 1.5162)
