@@ -160,7 +160,7 @@ metadata/class = "Greenhouse_Plant"
 [sub_resource type="Resource" id="Resource_j2vj8"]
 resource_name = "Greenhouse_PlantState"
 script = ExtResource("2_y2xbn")
-plant/plant_brush_active = false
+plant/plant_brush_active = true
 plant/plant_label = ""
 plant/plant = SubResource("Resource_sh41m")
 metadata/class = "Greenhouse_PlantState"
