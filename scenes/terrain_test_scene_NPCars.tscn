@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bg3xkkkxsuw6n" path="res://scenes/terrain_test_scene_slot2_normal_roughness.png" id="12_qv0jy"]
 [ext_resource type="Texture2D" uid="uid://cvyv552x0ako" path="res://scenes/terrain_test_scene_slot3_normal_roughness.png" id="13_q2mcm"]
 [ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/YellowCar.tscn" id="14_6t05d"]
-[ext_resource type="PackedScene" uid="uid://w7k6v8463arh" path="res://cars/NPCars/normal_car_1.tscn" id="14_oyvh0"]
+[ext_resource type="PackedScene" path="res://cars/NPCars/normal_car_1.tscn" id="14_oyvh0"]
 [ext_resource type="Texture2D" uid="uid://b66aiytt3ku87" path="res://textures/Road007/Road007_1K-PNG_Color.png" id="14_wxeuw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7ogtp"]
@@ -105,7 +105,7 @@ path_joined = false
 material = SubResource("StandardMaterial3D_invgd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="NavigationRegion3D/Path3D"]
-transform = Transform3D(-0.964322, -0.0205655, -0.263839, -0.00973814, 0.99902, -0.0422804, 0.26446, -0.038203, -0.963617, 59.7245, 0.121438, 65.1865)
+transform = Transform3D(-0.964322, -0.0205655, -0.263839, -0.00973815, 0.99902, -0.0422804, 0.26446, -0.038203, -0.963617, 59.7245, 0.121438, 65.1865)
 progress = 14.3491
 
 [node name="Marker3D" type="Marker3D" parent="NavigationRegion3D/Path3D/PathFollow3D"]
