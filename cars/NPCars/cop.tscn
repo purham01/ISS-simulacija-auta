@@ -453,7 +453,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bn6mc")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ym7kt"]
-size = Vector3(1.53638, 1.05121, 3.56641)
+size = Vector3(1.53638, 0.648865, 3.63287)
 
 [node name="Cop" instance=ExtResource("1_e74a5")]
 
@@ -502,7 +502,7 @@ mesh = SubResource("ArrayMesh_tjdd5")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" parent="." index="5"]
-transform = Transform3D(0.999989, -9.01241e-05, -0.00464367, 0.000180621, 0.99981, 0.019489, 0.00464103, -0.0194896, 0.999799, -0.0482699, 0.678027, -0.00589669)
+transform = Transform3D(0.999989, -9.01241e-05, -0.00464367, 0.000180621, 0.99981, 0.019489, 0.00464103, -0.0194896, 0.999799, -0.0484366, 0.815795, 0.0246559)
 shape = SubResource("BoxShape3D_ym7kt")
 
 [node name="BrakesRaycast" parent="." index="7"]
