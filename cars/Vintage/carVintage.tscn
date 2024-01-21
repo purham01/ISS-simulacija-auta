@@ -865,7 +865,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.98702e-05, 0.00512969, 0.0
 collision_layer = 2
 collision_mask = 5
 mass = 150.0
-gravity_scale = 5.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.5, 0.3)
 can_sleep = false
