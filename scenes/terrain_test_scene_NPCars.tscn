@@ -105,7 +105,7 @@ path_joined = false
 material = SubResource("StandardMaterial3D_invgd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="NavigationRegion3D/Path3D"]
-transform = Transform3D(-0.964322, -0.0205655, -0.263839, -0.00973815, 0.99902, -0.0422804, 0.26446, -0.038203, -0.963617, 59.7245, 0.121438, 65.1865)
+transform = Transform3D(-0.964322, -0.0205655, -0.263839, -0.00973814, 0.99902, -0.0422804, 0.26446, -0.038203, -0.963617, 59.7245, 0.121438, 65.1865)
 progress = 14.3491
 
 [node name="Marker3D" type="Marker3D" parent="NavigationRegion3D/Path3D/PathFollow3D"]
